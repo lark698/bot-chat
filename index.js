@@ -101,7 +101,10 @@ bot.on('message', (msg) => {
     if (msg.text.toString().toLowerCase().indexOf(zhenghuo) === 0) {
         bot.sendMessage(msg.chat.id,"你那个花生米大的脑袋里面就知道个整活是吧？+");
     }
-
+    let beitou = "被透"
+    if (msg.text.toString().toLowerCase().indexOf(beitou) === 0) {
+        bot.sendMessage(msg.chat.id,"无论小王怎么被透我都喜欢她");
+    }
 });
 
 
