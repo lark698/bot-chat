@@ -121,12 +121,16 @@ bot.on('message', (msg) => {
         bot.sendMessage(msg.chat.id,"你那个花生米大的脑袋里面就知道个整活是吧？+");
     }
     let beitou = "被透";
-    if (msg.text.toString().toLowerCase().indexOf(beitou) === 0) {
+    if (msg.text.toString().toLowerCase().includes(beitou)) {
         bot.sendMessage(msg.chat.id,"无论小王怎么被透我都喜欢她");
     }
     let xiaoxiongmao = "小熊猫";
     if (msg.text.toString().toLowerCase().indexOf(xiaoxiongmao) === 0) {
         bot.sendMessage(msg.chat.id,"小熊猫是处男？我不信");
+    }
+    let zhina = "支那";
+    if (msg.text.toString().toLowerCase().includes(zhina)) {
+        bot.sendMessage(msg.chat.id,"支人支性！");
     }
 });
 
