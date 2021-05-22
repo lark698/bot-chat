@@ -1,8 +1,28 @@
 const TelegramBot = require('node-telegram-bot-api');
 
-const token = '1861933304:AAHDAqr7-39atyE5MTq8tYOp_PU3csP2C9E';
+const token = process.env.TELEGRAM_TOKEN || '1861933304:AAHDAqr7-39atyE5MTq8tYOp_PU3csP2C9E';
+const TelegramBot = require('../..');
+const options = {
+    webHook: {
+        // Port to which you should bind is assigned to $PORT variable
+        // See: https://devcenter.heroku.com/articles/dynos#local-environment-variables
+        port: process.env.PORT
+        // you do NOT need to set up certificates since Heroku provides
+        // the SSL certs already (https://<app-name>.herokuapp.com)
+        // Also no need to pass IP because on Heroku you need to bind to 0.0.0.0
+    }
+};
+// Heroku routes from port :443 to $PORT
+// Add URL of your app to env variable or enable Dyno Metadata
+// to get this automatically
+// See: https://devcenter.heroku.com/articles/dyno-metadata
+const url = process.env.APP_URL || 'https://midi2-bot.herokuapp.com:443';
+const bot = new TelegramBot(token, options);
 
-const bot = new TelegramBot(token, {polling: true});
+// This informs the Telegram servers of the new webhook.
+// Note: we do not need to pass in the cert, as it already provided
+bot.setWebHook(`${url}/bot${token}`);
+
 
 bot.on('message', (msg) => {
     //anything
@@ -29,8 +49,8 @@ bot.on('message', (msg) => {
     if (msg.text.toString().toLowerCase().includes(who)) {
         bot.sendMessage(msg.chat.id,"我又丑又穷又肥又支");
     }
-    let chongkai = "透";
-    if (msg.text.toString().toLowerCase().includes(chongkai)) {
+    let chongkai = "透批";
+    if (msg.text.toString().toLowerCase().indexOf(chongkai) === 0) {
         bot.sendMessage(msg.chat.id,"我想要透批应该只能重开了");
     }
     let j8 = "鸡";
