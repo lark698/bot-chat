@@ -125,7 +125,7 @@ bot.on('message', (msg) => {
         bot.sendMessage(msg.chat.id,"无论小王怎么被透我都喜欢她");
     }
     let xiaoxiongmao = "小熊猫";
-    if (msg.text.toString().toLowerCase().indexOf(小熊猫) === 0) {
+    if (msg.text.toString().toLowerCase().indexOf(xiaoxiongmao) === 0) {
         bot.sendMessage(msg.chat.id,"小熊猫是处男？我不信");
     }
 });
