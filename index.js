@@ -74,7 +74,7 @@ bot.on('message', (msg) => {
         bot.sendMessage(msg.chat.id,"如果小王被情敌透了，我可以接受。");
     }
     let pang = "胖";
-    if (msg.text.toString().toLowerCase().includes(pang)) {
+    if (msg.text.toString().toLowerCase().indexOf(pang) === 0) {
         bot.sendMessage(msg.chat.id,"我的体重是100kg，身高不到178");
     }
     let dy= "dy";
@@ -92,6 +92,14 @@ bot.on('message', (msg) => {
     let xiangqin = "相亲";
     if (msg.text.toString().toLowerCase().indexOf(xiangqin) === 0) {
         bot.sendMessage(msg.chat.id,"呜呜呜，我以后娶老婆应该只能走相亲一条路了。");
+    }
+    let laopo = "老婆";
+    if (msg.text.toString().toLowerCase().indexOf(laopo) === 0) {
+        bot.sendMessage(msg.chat.id,"呜呜呜，我以后要给老婆洗一辈子衣服");
+    }
+    let zhenghuo = "整活";
+    if (msg.text.toString().toLowerCase().indexOf(zhenghuo) === 0) {
+        bot.sendMessage(msg.chat.id,"你那个花生米大的脑袋里面就知道个整活是吧？+");
     }
 
 });
