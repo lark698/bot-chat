@@ -92,8 +92,8 @@ bot.on('message', (msg) => {
     if (msg.text.toString().toLowerCase().includes(qingdi)) {
         bot.sendMessage(msg.chat.id,"如果小王被情敌透了，我可以接受。");
     }
-    let pang = "胖";
-    if (msg.text.toString().toLowerCase().indexOf(pang) === 0) {
+    let feizhai = "肥宅";
+    if (msg.text.toString().toLowerCase().includes(feizhai)) {
         bot.sendMessage(msg.chat.id,"我的体重是100kg，身高不到178");
     }
     let dy= "dy";
@@ -120,9 +120,13 @@ bot.on('message', (msg) => {
     if (msg.text.toString().toLowerCase().indexOf(zhenghuo) === 0) {
         bot.sendMessage(msg.chat.id,"你那个花生米大的脑袋里面就知道个整活是吧？+");
     }
-    let beitou = "被透"
+    let beitou = "被透";
     if (msg.text.toString().toLowerCase().indexOf(beitou) === 0) {
         bot.sendMessage(msg.chat.id,"无论小王怎么被透我都喜欢她");
+    }
+    let xiaoxiongmao = "小熊猫";
+    if (msg.text.toString().toLowerCase().indexOf(小熊猫) === 0) {
+        bot.sendMessage(msg.chat.id,"小熊猫是处男？我不信");
     }
 });
 
